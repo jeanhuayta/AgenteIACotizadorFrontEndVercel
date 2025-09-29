@@ -46,32 +46,43 @@ git commit -m "update"
 git push
 
 **🔐 Configuración de Login con Google**
+
 Paso 1: Crear credenciales OAuth en Google Cloud
 Ve a la Consola de Google Cloud.
 Crea un ID de cliente OAuth (tipo Aplicación Web).
 Agrega este URI de redirección:
 http://[TU_DOMINIO]/api/auth/callback/google
+
 Por ejemplo, en desarrollo: http://localhost:3000/api/auth/callback/google
 
 Paso 2: Variables de entorno necesarias
+
 Define las siguientes variables en .env.local o en Environment Variables si usas Vercel:
 
 GOOGLE_CLIENT_ID=tu_CLIENT_ID_de_Google
+
 GOOGLE_CLIENT_SECRET=tu_CLIENT_SECRET_de_Google
+
 NEXTAUTH_SECRET=clave_secreta_aleatoria
+
 🔐 Puedes generar tu NEXTAUTH_SECRET desde esta herramienta online: https://auth-secret-gen.vercel.app/
 
 💬 Variables esperadas por la API
 En el archivo:
 
 src/app/page.tsx
+
 La API espera que se envíen las siguientes variables:
 
 msg: mensaje del usuario.
+
 idagente: identificador para mantener el historial conversacional.
+
 Puedes adaptarlas según las necesidades de tu solución.
 
 
 **📦 Despliegue en Vercel****
+
 Este proyecto está preparado para ser desplegado directamente en Vercel.
+
 Solo debes configurar las variables de entorno mencionadas anteriormente.
